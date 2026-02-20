@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Cat } from '../../models/cat';
 import axios from 'axios';
 import { PageHeader } from '../../components/page-header';
 import { StarRating } from '../../components/star-rating';
 import { CatCallToAction } from '../../components/cat-call-to-action';
+import { Cat } from '@felitech/shared-types';
 
 export const getCat = async (id: string | number): Promise<Cat> => {
   const response = await axios.get<Cat>(`/api/cats/${id}`);
@@ -59,11 +59,15 @@ export function SingleCatPage() {
 
           <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col gap-2">
             <div className="flex items-center justify-between">
-              <span className="text-gray-900 font-medium text-sm">Apartment Friendly</span>
+              <span className="text-gray-900 font-medium text-sm">
+                Apartment Friendly
+              </span>
               <StarRating rating={cat.compatibility.apartmentFriendly} />
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-gray-900 font-medium text-sm">Child Friendly</span>
+              <span className="text-gray-900 font-medium text-sm">
+                Child Friendly
+              </span>
               <StarRating rating={cat.compatibility.childFriendly} />
             </div>
             <div className="flex items-center justify-between">

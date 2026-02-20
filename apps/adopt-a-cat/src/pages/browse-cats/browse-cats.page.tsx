@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { GRID_LAYOUT_CLASSES, SECTION_PADDING } from './browse-cats.constants';
 import axios from 'axios';
-import { Cat } from '../../models/cat';
+import { Cat } from '@felitech/shared-types';
 import { CatCard } from '../../components/cat-card';
 import { PageHeader } from '../../components/page-header';
 
@@ -19,7 +19,7 @@ export function BrowseCatsPage() {
   }, []);
 
   const filteredCats = cats.filter((cat) =>
-    cat.name.toLowerCase().includes(searchQuery.toLowerCase())
+    cat.name.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   return (

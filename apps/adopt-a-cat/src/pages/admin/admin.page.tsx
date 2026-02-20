@@ -1,7 +1,7 @@
 import { useState, SyntheticEvent, ChangeEvent } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Cat } from '../../models/cat';
+import { Cat } from '@felitech/shared-types';
 import { PageHeader } from '../../components/page-header';
 import { BUTTON_STYLE } from '../browse-cats/browse-cats.constants';
 
@@ -24,7 +24,9 @@ export function AdminPage() {
     }
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -37,7 +39,10 @@ export function AdminPage() {
       <PageHeader title="Add a New Cat" />
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Name
           </label>
           <input
@@ -53,7 +58,10 @@ export function AdminPage() {
         </div>
 
         <div>
-          <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="imageUrl"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Image URL
           </label>
           <input
@@ -69,7 +77,10 @@ export function AdminPage() {
         </div>
 
         <div>
-          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="description"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Description
           </label>
           <textarea
@@ -85,10 +96,7 @@ export function AdminPage() {
         </div>
 
         <div className="flex justify-end pt-4">
-          <button
-            type="submit"
-            className={BUTTON_STYLE}
-          >
+          <button type="submit" className={BUTTON_STYLE}>
             Add Cat
           </button>
         </div>

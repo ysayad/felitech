@@ -1,4 +1,4 @@
-import { Cat } from '../models/cat';
+import { Cat } from '@felitech/shared-types';
 
 export interface CatCallToActionProps {
   cat: Cat;
@@ -9,7 +9,9 @@ export function CatCallToAction({ cat, className = '' }: CatCallToActionProps) {
   const handleAdopt = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent navigation if inside a link
     e.stopPropagation();
-    alert(`Thank you for your interest in adopting ${cat.name}! We will contact you shortly.`);
+    alert(
+      `Thank you for your interest in adopting ${cat.name}! We will contact you shortly.`,
+    );
   };
 
   return (

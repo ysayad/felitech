@@ -1,4 +1,4 @@
-import { Cat } from '../models/cat';
+import { Cat } from '@felitech/shared-types';
 import { Link } from 'react-router-dom';
 import { CatCallToAction } from './cat-call-to-action';
 
@@ -26,7 +26,10 @@ export function CatCard({ cat }: CatCardProps) {
           />
         </div>
 
-        <CatCallToAction cat={cat} className="w-full justify-center z-10 relative" />
+        <CatCallToAction
+          cat={cat}
+          className="w-full justify-center z-10 relative"
+        />
 
         {cat.isFavorite && (
           <div className="absolute top-2 right-2 bg-pink-500 text-white p-1 rounded-full shadow-md">

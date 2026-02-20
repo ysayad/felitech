@@ -1,17 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-
-export type Cat = {
-  id: number;
-  name: string;
-  imageUrl: string;
-  description: string;
-  isFavorite: boolean;
-  compatibility: {
-    apartmentFriendly: number;
-    childFriendly: number;
-    calm: number;
-  };
-};
+import { Cat } from '@felitech/shared-types';
 
 @Controller()
 export class AppController {
